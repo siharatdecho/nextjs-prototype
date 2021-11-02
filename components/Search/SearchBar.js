@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import SearchIcon from '@mui/icons-material/Search'
-//import './SearchBar.css'
+import SearchBarStyle from '../../styles/SearchBar.module.css'
 
 export default function SearchBar({placeholder, data}) {
     const [filteredData, setFilteredData] = useState([])
@@ -14,18 +14,18 @@ export default function SearchBar({placeholder, data}) {
     }
 
     return (
-        <div className="search">
-            <div className="">
-                <input type="text" placeholder={placeholder} onChange={handleFilter} />
-                <div className="searchIcon">
+        <div className={SearchBarStyle.search}>
+            <div>
+                <input className={SearchBarStyle.inputText} type="text" placeholder={placeholder} onChange={handleFilter} />
+                <div className={SearchBarStyle.searchIcon}>
                     <SearchIcon />
                 </div>
             </div>
             {filteredData.length != 0 && (
-                <div className="dataResult">
+                <div className={SearchBarStyle.dataResult}>
                     {
                         filteredData.map((value, index) => {
-                            return <div><a>{value.first_name}</a></div>
+                            return <div><a className={SearchBarStyle.link}>{value.first_name}</a></div>
                         })
                     }
                 </div>
