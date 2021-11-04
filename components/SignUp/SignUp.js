@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import NextLink from 'next/link'
 
 function Copyright(props) {
   return (
@@ -119,7 +120,7 @@ export default function SignUp() {
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">
-                  Already have an account? Sign in
+                  <NextLink href='/login'>Already have an account? Sign in</NextLink>
                 </Link>
               </Grid>
             </Grid>
